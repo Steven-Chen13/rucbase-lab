@@ -75,7 +75,7 @@ void LRUReplacer::unpin(frame_id_t frame_id) {
         return;
     }
     
-    // 将frame_id添加到列表尾部（作为最老的元素）
+    // 将frame_id添加到列表尾部（作为最新的元素）
     LRUlist_.push_back(frame_id);
     // 在哈希表中存储指向列表中位置的迭代器
     LRUhash_[frame_id] = std::prev(LRUlist_.end());

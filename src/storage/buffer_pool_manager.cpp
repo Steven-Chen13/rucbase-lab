@@ -18,8 +18,8 @@ See the Mulan PSL v2 for more details. */
 bool BufferPoolManager::find_victim_page(frame_id_t* frame_id) {
     // 首先检查是否有空闲帧
     if (!free_list_.empty()) {
-        *frame_id = free_list_.front();
-        free_list_.pop_front();
+        *frame_id = free_list_.front();// 获取free_list的第一个元素
+        free_list_.pop_front();// 从free_list中移除该帧
         return true;
     }
     
